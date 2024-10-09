@@ -1,31 +1,26 @@
-name: Test Build Every 2 Minutes
+name: Test Build Every 5 Minutes
 
 on:
   schedule:
-	# Runs every 5 minutes (for testing purposes)
-	- cron: '*/5* * * *'
+    # Runs every 5 minutes (for testing purposes)
+    - cron: '*/5 * * * *'
 
 jobs:
   build:
-	runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-	steps:
-	- uses: actions/checkout@v2
-  	with:
-    	ref: T3dev # Check out the `T3dev` branch
-   	 
-	- name: Verify Branch this is running on
-  	run: |
-    	echo "Current branch is: $(git rev-parse --abbrev-ref HEAD)"
-  	# This will print the branch name in the logs
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: dev # Check out the `dev` branch
 
-	- name: Set up JDK
-  	uses: actions/setup-java@v1
-  	with:
-    	java-version: '21' # Adjust to your JDK version
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: '17' # Adjust to your JDK version
 
-	- name: Run Tests
-  	run: ./gradlew test
+    - name: Run Tests
+      run: ./gradlew test
 
-	- name: Build Application
-  	run: ./gradlew build
+    - name: Build Application
+      run: ./gradlew build
