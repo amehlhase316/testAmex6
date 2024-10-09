@@ -50,15 +50,15 @@ public class SimpleGroceryServicesImpl implements GroceryServices {
 	}
 
 	@Override
-	public GroceryItem findOne(String id) throws Exception {
-		try {
-			return __groceryItems.get(id);
-		} catch (Throwable t) {
-			// why do we handle unchecked exceptions? In writing the most robust code we
-			// should always trap anything that could make it back through our response pipeline
-			throw new Exception(t);
-		}
-	}
+	    public GroceryItem findOne(String id) throws Exception {
+	   	 if (__groceryItems.containsKey(id)) {
+	   		 return __groceryItems.get(id);
+	   	 }
+	   	 else {
+	   		 throw new Exception(id + " id doesn't exist");
+	   	 }
+	    }
+
 
 	@Override
 	public String create(GroceryItem item) throws Exception {
