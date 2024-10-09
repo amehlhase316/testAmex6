@@ -3,7 +3,7 @@ name: Test Build Every 5 Minutes
 on:
   schedule:
     # Runs every 5 minutes (for testing purposes)
-    - cron: '*/5 * * * *'
+    - cron: '*/6 * * * *'
 
 jobs:
   build:
