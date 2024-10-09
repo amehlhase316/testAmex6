@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: dev # Check out the `dev` branch
 
     - name: Set up JDK
       uses: actions/setup-java@v1
