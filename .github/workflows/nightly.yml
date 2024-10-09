@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: dev # Check out the `dev` branch
+        ref: T3dev # Check out the `dev` branch
 
     - name: Set up JDK
       uses: actions/setup-java@v1
