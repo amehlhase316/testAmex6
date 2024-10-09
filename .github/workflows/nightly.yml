@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
