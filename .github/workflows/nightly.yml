@@ -19,8 +19,13 @@ jobs:
       with:
         java-version: '21' # Adjust to your JDK version
 
+    - name: Build Application
+      run: ./gradlew build
+
+  test:
+    runs-on: ubuntu-latest
+    steps: 
     - name: Run Tests
       run: ./gradlew test
 
-    - name: Build Application
-      run: ./gradlew build
+    
