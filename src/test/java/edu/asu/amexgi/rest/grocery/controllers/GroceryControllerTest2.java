@@ -32,6 +32,6 @@ public class GroceryControllerTest2 {
 
     @Test
     void getGroceryItemByIdExceptionTest() throws Exception {
-        mvc.perform(get("/api/groceries/MLK1")).andExpect(status().is5xxServerError());
+        mvc.perform(get("/api/groceries/MLK")).andExpect(status().is5xxServerError());
     }
 }
